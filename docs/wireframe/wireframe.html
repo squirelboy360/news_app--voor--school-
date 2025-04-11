@@ -1,0 +1,272 @@
+# App Wireframes
+
+## Home Screen
+<svg width="300" height="600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Phone outline -->
+  <rect x="10" y="10" width="280" height="580" rx="20" ry="20" fill="none" stroke="#333" stroke-width="2"/>
+  
+  <!-- Status bar -->
+  <rect x="10" y="10" width="280" height="30" rx="20" ry="20" fill="#f0f0f0" stroke="#333" stroke-width="1"/>
+  
+  <!-- App bar with title -->
+  <rect x="10" y="40" width="280" height="60" fill="#e0e0e0"/>
+  <text x="150" y="75" font-family="Arial" font-size="18" text-anchor="middle" fill="#333">General News</text>
+  
+  <!-- News items -->
+  <rect x="20" y="110" width="260" height="140" rx="8" ry="8" fill="#f8f8f8" stroke="#ddd" stroke-width="1"/>
+  <rect x="30" y="120" width="240" height="80" fill="#ddd"/>
+  <text x="40" y="220" font-family="Arial" font-size="14" fill="#333">News headline goes here</text>
+  <text x="40" y="240" font-family="Arial" font-size="12" fill="#777">Short description of the news article...</text>
+  
+  <rect x="20" y="260" width="260" height="140" rx="8" ry="8" fill="#f8f8f8" stroke="#ddd" stroke-width="1"/>
+  <rect x="30" y="270" width="240" height="80" fill="#ddd"/>
+  <text x="40" y="370" font-family="Arial" font-size="14" fill="#333">Another news headline here</text>
+  <text x="40" y="390" font-family="Arial" font-size="12" fill="#777">Description of another news article...</text>
+  
+  <rect x="20" y="410" width="260" height="140" rx="8" ry="8" fill="#f8f8f8" stroke="#ddd" stroke-width="1"/>
+  <rect x="30" y="420" width="240" height="80" fill="#ddd"/>
+  <text x="40" y="520" font-family="Arial" font-size="14" fill="#333">Third news headline here</text>
+  <text x="40" y="540" font-family="Arial" font-size="12" fill="#777">Description of third news article...</text>
+  
+  <!-- Bottom navigation bar -->
+  <rect x="10" y="560" width="280" height="30" fill="#f0f0f0"/>
+  <circle cx="60" cy="575" r="10" fill="#333"/>
+  <circle cx="150" cy="575" r="10" fill="#777"/>
+  <circle cx="240" cy="575" r="10" fill="#777"/>
+</svg>
+
+## Article Detail Screen
+<svg width="300" height="600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Phone outline -->
+  <rect x="10" y="10" width="280" height="580" rx="20" ry="20" fill="none" stroke="#333" stroke-width="2"/>
+  
+  <!-- Status bar -->
+  <rect x="10" y="10" width="280" height="30" rx="20" ry="20" fill="#f0f0f0" stroke="#333" stroke-width="1"/>
+  
+  <!-- App bar with back button -->
+  <rect x="10" y="40" width="280" height="60" fill="#e0e0e0"/>
+  <text x="150" y="75" font-family="Arial" font-size="18" text-anchor="middle" fill="#333">Article Details</text>
+  <text x="30" y="75" font-family="Arial" font-size="18" fill="#333">←</text>
+  
+  <!-- Article image -->
+  <rect x="20" y="110" width="260" height="150" fill="#ddd"/>
+  
+  <!-- Article title -->
+  <rect x="20" y="270" width="260" height="60" fill="none"/>
+  <text x="30" y="290" font-family="Arial" font-weight="bold" font-size="16" fill="#333">News Article Headline Goes Here And</text>
+  <text x="30" y="310" font-family="Arial" font-weight="bold" font-size="16" fill="#333">Can Span Multiple Lines</text>
+  
+  <!-- Article metadata -->
+  <rect x="20" y="330" width="260" height="30" fill="none"/>
+  <text x="30" y="350" font-family="Arial" font-size="12" fill="#777">By Author Name • April 11, 2025</text>
+  
+  <!-- Article content -->
+  <rect x="20" y="370" width="260" height="200" fill="none"/>
+  <text x="30" y="390" font-family="Arial" font-size="14" fill="#333">Lorem ipsum dolor sit amet, consectetur</text>
+  <text x="30" y="410" font-family="Arial" font-size="14" fill="#333">adipiscing elit. Donec euismod, nisl eget</text>
+  <text x="30" y="430" font-family="Arial" font-size="14" fill="#333">consectetur sagittis, nisl nunc</text>
+  <text x="30" y="450" font-family="Arial" font-size="14" fill="#333">ultricies nunc, euismod aliquam nisl</text>
+  <text x="30" y="470" font-family="Arial" font-size="14" fill="#333">nunc ultricies nunc...</text>
+</svg>
+
+## Error State Screen
+<svg width="300" height="600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Phone outline -->
+  <rect x="10" y="10" width="280" height="580" rx="20" ry="20" fill="none" stroke="#333" stroke-width="2"/>
+  
+  <!-- Status bar -->
+  <rect x="10" y="10" width="280" height="30" rx="20" ry="20" fill="#f0f0f0" stroke="#333" stroke-width="1"/>
+  
+  <!-- App bar -->
+  <rect x="10" y="40" width="280" height="60" fill="#e0e0e0"/>
+  <text x="150" y="75" font-family="Arial" font-size="18" text-anchor="middle" fill="#333">Business News</text>
+  
+  <!-- Error state -->
+  <circle cx="150" cy="250" r="40" fill="none" stroke="#ff6b6b" stroke-width="2"/>
+  <text x="150" y="250" font-family="Arial" font-size="40" text-anchor="middle" fill="#ff6b6b">!</text>
+  
+  <text x="150" y="320" font-family="Arial" font-size="16" text-anchor="middle" fill="#333">Connection Error</text>
+  <text x="150" y="350" font-family="Arial" font-size="14" text-anchor="middle" fill="#777">Failed to load news</text>
+  
+  <!-- Retry button -->
+  <rect x="100" y="380" width="100" height="40" rx="20" ry="20" fill="#4dabf7" stroke="none"/>
+  <text x="150" y="405" font-family="Arial" font-size="14" text-anchor="middle" fill="white">Retry</text>
+  
+  <!-- Bottom navigation bar -->
+  <rect x="10" y="560" width="280" height="30" fill="#f0f0f0"/>
+  <circle cx="60" cy="575" r="10" fill="#777"/>
+  <circle cx="150" cy="575" r="10" fill="#333"/>
+  <circle cx="240" cy="575" r="10" fill="#777"/>
+</svg>
+
+## Navigation Layout
+<svg width="300" height="600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Phone outline -->
+  <rect x="10" y="10" width="280" height="580" rx="20" ry="20" fill="none" stroke="#333" stroke-width="2"/>
+  
+  <!-- Content area placeholder -->
+  <rect x="20" y="50" width="260" height="500" fill="#f8f8f8"/>
+  
+  <!-- Main content indicator -->
+  <text x="150" y="280" font-family="Arial" font-size="16" text-anchor="middle" fill="#333">Content Area</text>
+  <text x="150" y="310" font-family="Arial" font-size="14" text-anchor="middle" fill="#777">(News List)</text>
+  
+  <!-- Bottom navigation bar -->
+  <rect x="10" y="560" width="280" height="30" fill="#e0e0e0"/>
+  
+  <!-- Nav icons -->
+  <g>
+    <circle cx="60" cy="575" r="10" fill="#333"/>
+    <text x="60" y="552" font-family="Arial" font-size="10" text-anchor="middle" fill="#777">General</text>
+  </g>
+  
+  <g>
+    <circle cx="150" cy="575" r="10" fill="#777"/>
+    <text x="150" y="552" font-family="Arial" font-size="10" text-anchor="middle" fill="#777">Business</text>
+  </g>
+  
+  <g>
+    <circle cx="240" cy="575" r="10" fill="#777"/>
+    <text x="240" y="552" font-family="Arial" font-size="10" text-anchor="middle" fill="#777">Sports</text>
+  </g>
+</svg>
+
+
+
+<svg viewBox="0 0 400 800" xmlns="http://www.w3.org/2000/svg">
+  <!-- Modern iPhone omlijning met notch -->
+  <rect x="10" y="10" width="380" height="780" rx="40" ry="40" fill="#f0f0f0" stroke="#333" stroke-width="2"/>
+  <rect x="20" y="20" width="360" height="760" rx="35" ry="35" fill="#000" stroke="none"/>
+  
+  <!-- Notch aan de bovenkant -->
+  <path d="M170,20 L230,20 Q240,20 240,30 L240,45 Q240,55 230,55 L170,55 Q160,55 160,45 L160,30 Q160,20 170,20 Z" fill="#000" stroke="none"/>
+  
+  <!-- Scherm inhoud -->
+  <rect x="20" y="20" width="360" height="760" rx="30" ry="30" fill="white" stroke="none"/>
+  
+  <!-- Status balk -->
+  <rect x="20" y="20" width="160" height="35" fill="white" stroke="none"/>
+  <rect x="240" y="20" width="140" height="35" fill="white" stroke="none"/>
+  <text x="55" y="42" font-family="Arial" font-size="14" font-weight="bold" fill="#333">11:06</text>
+  <text x="330" y="42" font-family="Arial" font-size="14" text-anchor="end" fill="#333">100%</text>
+  
+  <!-- Hoofdscherm header met bloemen -->
+  <rect x="20" y="55" width="360" height="160" fill="#4285F4" stroke="none"/>
+  <text x="200" y="110" font-family="Arial" font-size="28" text-anchor="middle" font-weight="bold" fill="white">Algemeen Nieuws</text>
+  
+  <!-- Bloem decoraties -->
+  <g transform="translate(120, 140)">
+    <!-- Bloem 1 -->
+    <ellipse cx="0" cy="-15" rx="20" ry="25" fill="#FFFDE7" stroke="#FFFDE7" stroke-width="1"/>
+    <ellipse cx="15" cy="0" rx="20" ry="25" fill="#FFFDE7" stroke="#FFFDE7" stroke-width="1" transform="rotate(72)"/>
+    <ellipse cx="9" cy="12" rx="20" ry="25" fill="#FFFDE7" stroke="#FFFDE7" stroke-width="1" transform="rotate(144)"/>
+    <ellipse cx="-9" cy="12" rx="20" ry="25" fill="#FFFDE7" stroke="#FFFDE7" stroke-width="1" transform="rotate(216)"/>
+    <ellipse cx="-15" cy="0" rx="20" ry="25" fill="#FFFDE7" stroke="#FFFDE7" stroke-width="1" transform="rotate(288)"/>
+    <circle cx="0" cy="0" r="8" fill="#03A9F4"/>
+    <!-- Stippen -->
+    <circle cx="0" cy="-10" r="2" fill="#FF5722"/>
+    <circle cx="8" cy="-6" r="2" fill="#03A9F4"/>
+    <circle cx="10" cy="2" r="2" fill="#FF5722"/>
+    <circle cx="0" cy="10" r="2" fill="#03A9F4"/>
+    <circle cx="-10" cy="2" r="2" fill="#FF5722"/>
+  </g>
+  
+  <g transform="translate(200, 140)">
+    <!-- Bloem 2 -->
+    <ellipse cx="0" cy="-15" rx="20" ry="25" fill="#FFFDE7" stroke="#FFFDE7" stroke-width="1"/>
+    <ellipse cx="15" cy="0" rx="20" ry="25" fill="#FFFDE7" stroke="#FFFDE7" stroke-width="1" transform="rotate(72)"/>
+    <ellipse cx="9" cy="12" rx="20" ry="25" fill="#FFFDE7" stroke="#FFFDE7" stroke-width="1" transform="rotate(144)"/>
+    <ellipse cx="-9" cy="12" rx="20" ry="25" fill="#FFFDE7" stroke="#FFFDE7" stroke-width="1" transform="rotate(216)"/>
+    <ellipse cx="-15" cy="0" rx="20" ry="25" fill="#FFFDE7" stroke="#FFFDE7" stroke-width="1" transform="rotate(288)"/>
+    <circle cx="0" cy="0" r="8" fill="#03A9F4"/>
+    <!-- Stippen -->
+    <circle cx="0" cy="-10" r="2" fill="#FF5722"/>
+    <circle cx="8" cy="-6" r="2" fill="#03A9F4"/>
+    <circle cx="10" cy="2" r="2" fill="#FF5722"/>
+    <circle cx="0" cy="10" r="2" fill="#03A9F4"/>
+    <circle cx="-10" cy="2" r="2" fill="#FF5722"/>
+  </g>
+  
+  <g transform="translate(280, 140)">
+    <!-- Bloem 3 -->
+    <ellipse cx="0" cy="-15" rx="20" ry="25" fill="#FFFDE7" stroke="#FFFDE7" stroke-width="1"/>
+    <ellipse cx="15" cy="0" rx="20" ry="25" fill="#FFFDE7" stroke="#FFFDE7" stroke-width="1" transform="rotate(72)"/>
+    <ellipse cx="9" cy="12" rx="20" ry="25" fill="#FFFDE7" stroke="#FFFDE7" stroke-width="1" transform="rotate(144)"/>
+    <ellipse cx="-9" cy="12" rx="20" ry="25" fill="#FFFDE7" stroke="#FFFDE7" stroke-width="1" transform="rotate(216)"/>
+    <ellipse cx="-15" cy="0" rx="20" ry="25" fill="#FFFDE7" stroke="#FFFDE7" stroke-width="1" transform="rotate(288)"/>
+    <circle cx="0" cy="0" r="8" fill="#03A9F4"/>
+    <!-- Stippen -->
+    <circle cx="0" cy="-10" r="2" fill="#FF5722"/>
+    <circle cx="8" cy="-6" r="2" fill="#03A9F4"/>
+    <circle cx="10" cy="2" r="2" fill="#FF5722"/>
+    <circle cx="0" cy="10" r="2" fill="#03A9F4"/>
+    <circle cx="-10" cy="2" r="2" fill="#FF5722"/>
+  </g>
+  
+  <!-- Content gebied -->
+  <rect x="20" y="215" width="360" height="530" fill="white" stroke="none"/>
+  
+  <!-- Eerste nieuwsitem met afbeelding (auto ongeluk) -->
+  <rect x="40" y="235" width="320" height="220" rx="12" ry="12" fill="white" stroke="#e0e0e0" stroke-width="1"/>
+  <!-- Nieuwsafbeelding -->
+  <rect x="50" y="245" width="300" height="140" rx="8" ry="8" fill="#e0e0e0"/>
+  <!-- Voorbeeldafbeelding van een auto ongeluk -->
+  <path d="M50,245 L350,245 L350,385 L50,385 Z" fill="#777" stroke="none"/>
+  <path d="M100,300 Q150,270 200,300 Q250,330 300,310 L300,385 L50,385 L50,330 Q75,350 100,300 Z" fill="#269" stroke="none"/>
+  <path d="M150,370 Q200,320 270,350 L270,385 L150,385 Z" fill="#654" stroke="none"/>
+  <path d="M80,385 L90,340 L120,330 L150,340 L165,385 Z" fill="#433" stroke="none"/>
+  <path d="M175,385 L185,365 L260,365 L270,385 Z" fill="#433" stroke="none"/>
+  <path d="M150,350 L250,350 L220,380 L180,380 Z" fill="#222" stroke="none"/>
+  <path d="M200,260 L320,260 L300,340 L180,340 Z" fill="#555" stroke="none" opacity="0.5"/>
+  
+  <!-- Nieuwstitel -->
+  <text x="50" y="410" font-family="Arial" font-size="18" font-weight="bold" fill="#333">4 familieleden aangereden door</text>
+  <text x="50" y="435" font-family="Arial" font-size="18" font-weight="bold" fill="#333">snelheidsduivel in UP</text>
+  <!-- Beschrijving -->
+  <text x="50" y="460" font-family="Arial" font-size="14" fill="#777">4 familieleden aangereden door</text>
+  <text x="50" y="480" font-family="Arial" font-size="14" fill="#777">snelheidsduivel in UP</text>
+  
+  <!-- Tweede nieuwsitem met afbeelding (politieke figuren) -->
+  <rect x="40" y="485" width="320" height="220" rx="12" ry="12" fill="white" stroke="#e0e0e0" stroke-width="1"/>
+  <!-- Nieuwsafbeelding -->
+  <rect x="50" y="495" width="300" height="140" rx="8" ry="8" fill="#e0e0e0"/>
+  <!-- Gestileerde versie van politieke figuren -->
+  <rect x="50" y="495" width="300" height="140" fill="#aab" stroke="none"/>
+  <rect x="75" y="495" width="250" height="140" fill="#9a9" stroke="none"/>
+  <rect x="125" y="510" width="60" height="125" fill="#667" stroke="none"/>
+  <rect x="215" y="510" width="60" height="125" fill="#667" stroke="none"/>
+  <!-- Silhouetten -->
+  <ellipse cx="155" cy="525" rx="20" ry="20" fill="#555" stroke="none"/>
+  <rect x="137" y="540" width="36" height="80" fill="#555" stroke="none"/>
+  <ellipse cx="245" cy="525" rx="20" ry="20" fill="#555" stroke="none"/>
+  <rect x="227" y="540" width="36" height="80" fill="#555" stroke="none"/>
+  
+  <!-- Verborgen tekst omdat dit onder de vouw zou vallen in het voorbeeldbeeld -->
+  <text x="50" y="660" font-family="Arial" font-size="18" font-weight="bold" fill="#333" opacity="0.6">Diplomatische ontmoeting</text>
+  <text x="50" y="685" font-family="Arial" font-size="14" fill="#777" opacity="0.6">Nieuwe onderhandelingen gestart</text>
+  
+  <!-- Navigatie balk onderaan -->
+  <rect x="20" y="745" width="360" height="35" fill="white" stroke="none"/>
+  <line x1="20" y1="745" x2="380" y2="745" stroke="#e0e0e0" stroke-width="1"/>
+  
+  <!-- Tab iconen -->
+  <circle cx="80" cy="762" r="20" fill="#fff" stroke="#2196F3" stroke-width="2"/>
+  <circle cx="80" cy="762" r="12" fill="#2196F3" stroke="none"/>
+  <path d="M65,762 A15,15 0 1,0 95,762 Z" fill="none" stroke="#2196F3" stroke-width="3" stroke-linecap="round"/>
+  <line x1="63" y1="762" x2="97" y2="762" stroke="#2196F3" stroke-width="3" stroke-linecap="round"/>
+  <line x1="80" y1="747" x2="80" y2="777" stroke="#2196F3" stroke-width="3" stroke-linecap="round"/>
+  
+  <rect x="140" y="752" width="40" height="20" fill="none" stroke="#777" stroke-width="2" rx="2" ry="2"/>
+  <line x1="148" y1="757" x2="172" y2="757" stroke="#777" stroke-width="2"/>
+  <line x1="148" y1="762" x2="172" y2="762" stroke="#777" stroke-width="2"/>
+  <line x1="148" y1="767" x2="172" y2="767" stroke="#777" stroke-width="2"/>
+  
+  <rect x="220" y="752" width="20" height="20" fill="none" stroke="#777" stroke-width="2"/>
+  <path d="M220,752 L240,752 L240,762 L230,772 L220,762 Z" fill="none" stroke="#777" stroke-width="2"/>
+  
+  <circle cx="320" cy="762" r="12" fill="none" stroke="#777" stroke-width="2"/>
+  <path d="M313,755 L327,769 M313,769 L327,755" stroke="#777" stroke-width="2"/>
+  
+  <!-- Home indicator -->
+  <rect x="140" y="765" width="120" height="5" rx="2.5" ry="2.5" fill="#000" opacity="0.2"/>
+</svg>

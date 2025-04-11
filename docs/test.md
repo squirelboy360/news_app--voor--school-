@@ -9,4 +9,9 @@
 | Artikel tap opent detailpagina              | ✅        |
 | Geen internet toont foutmelding             | ✅        |
 | Invalid JSON veroorzaakt geen crash         | ✅        |
-
+| Pull-to-refresh werkt op alle schermen      | ✅        |
+| General nieuws wordt correct weergegeven    | ✅        |
+| Business nieuws wordt correct weergegeven   | ✅        |
+| Sport nieuws wordt correct weergegeven      | ✅        |
+| Tech nieuws wordt correct weergegeven       | ✅        |
+| API-omschakeling heeft geen impact op UI    | ✅        |
