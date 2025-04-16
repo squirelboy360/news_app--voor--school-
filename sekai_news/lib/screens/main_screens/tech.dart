@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sekai_news/model/news.dart';
 
-import 'package:sekai_news/screens/main_screens/detailed_screens/tech/tech_detailed_screen.dart';
+import 'package:sekai_news/screens/widgets/details.dart';
 
 import 'package:http/http.dart' as http;
 import 'package:sekai_news/util/color.dart';
@@ -128,7 +128,7 @@ class _TechScreenState extends State<TechScreen> {
                           child: InkWell(
                             onTap: () {
                               Navigator.of(context).push(MaterialPageRoute(
-                                builder: (context) => TechDetailedScreen(
+                                builder: (context) => DetailedScreen(
                                   imageUrl: tech.urlToImage ??
                                       'https://via.placeholder.com/300',
                                   content:

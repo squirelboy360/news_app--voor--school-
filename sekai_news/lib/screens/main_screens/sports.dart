@@ -3,9 +3,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sekai_news/model/news.dart';
-
-import 'package:sekai_news/screens/main_screens/detailed_screens/sports/sports_detailed_screen.dart';
 import 'package:http/http.dart' as http;
+import 'package:sekai_news/screens/widgets/details.dart';
 import 'package:sekai_news/util/color.dart';
 import 'package:sekai_news/util/endpoints.dart';
 
@@ -127,7 +126,7 @@ class _SportsScreenState extends State<SportsScreen> {
                           child: InkWell(
                             onTap: () {
                               Navigator.of(context).push(MaterialPageRoute(
-                                builder: (context) => SportDetailedScreen(
+                                builder: (context) => DetailedScreen(
                                   imageUrl: sports.urlToImage ??
                                       'https://via.placeholder.com/300',
                                   content:

@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:http/http.dart' as http;
 import 'package:sekai_news/model/news.dart';
-import 'package:sekai_news/screens/main_screens/detailed_screens/home/home_detailed_screen.dart';
+import 'package:sekai_news/screens/widgets/details.dart';
 import 'package:sekai_news/util/color.dart';
 import 'package:sekai_news/util/endpoints.dart';
 
@@ -127,13 +127,13 @@ class _HomeScreenState extends State<HomeScreen> {
                           child: InkWell(
                             onTap: () {
                               Navigator.of(context).push(MaterialPageRoute(
-                                builder: (context) => HomeDetailedScreen(
+                                builder: (context) => DetailedScreen(
                                   content:
                                       news.content ?? 'No content available',
-                                  src: news.urlToImage ??
+                                  imageUrl: news.urlToImage ??
                                       'https://via.placeholder.com/300',
                                   title: news.title ?? 'No title',
-                                  publishedAt:
+                                  date:
                                       news.publishedAt ?? 'Unknown date',
                                   author: news.author ?? 'Unknown author',
                                 ),

@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:http/http.dart' as http;
 import 'package:sekai_news/model/news.dart';
-import 'package:sekai_news/screens/main_screens/detailed_screens/business/business_detailed_screen.dart';
+import 'package:sekai_news/screens/widgets/details.dart';
 import 'package:sekai_news/util/color.dart';
 import 'package:sekai_news/util/endpoints.dart';
 
@@ -127,7 +127,7 @@ class _BusinessScreenState extends State<BusinessScreen> {
                           child: InkWell(
                             onTap: () {
                               Navigator.of(context).push(MaterialPageRoute(
-                                builder: (context) => BusinessDetailedScreen(
+                                builder: (context) => DetailedScreen(
                                   content:
                                       news.content ?? 'No content available',
                                   imageUrl: news.urlToImage ??

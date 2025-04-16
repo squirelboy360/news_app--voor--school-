@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sekai_news/screens/bottom_nav_bar/bottom_navigation_bar/bottom_nav.dart';
+import 'package:sekai_news/screens/widgets/bottom_nav.dart';
 import 'package:sekai_news/screens/main_screens/business.dart';
 import 'package:sekai_news/screens/main_screens/home.dart';
 import 'package:sekai_news/screens/main_screens/sports.dart';

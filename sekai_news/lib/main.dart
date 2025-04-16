@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sekai_news/screens/bottom_nav_bar/bottom_navigation_bar/main_nav_screen.dart';
+import 'package:sekai_news/screens/main_screens/main_screen.dart';
 
 void main() {
   runApp(const MyApp());
