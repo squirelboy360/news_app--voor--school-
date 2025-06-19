@@ -6,5 +6,7 @@
 - Sorteren op categorie of datum
 
 ## Voor het proces
-- Vaker kleine tests tussendoor inplannen
+- ✅ Moderne test architectuur geïmplementeerd (geen deprecated dependencies)
+- ✅ Uitgebreide integration tests toegevoegd
+- ✅ Handmatige test checklists gemaakt
 - Feedback moment eerder inplannen met begeleider

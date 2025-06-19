@@ -1,11 +1,17 @@
 import 'dart:convert';
 import 'dart:io';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:http/http.dart' as http;
 import 'package:http/testing.dart';
 import 'package:sekai_news/util/endpoints.dart';
 
 void main() {
+  setUpAll(() async {
+    // Initialize dotenv for tests
+    await dotenv.load(fileName: ".env");
+  });
+
   group('Network and API Tests', () {
     test('should handle successful API response', () async {
       // Arrange
