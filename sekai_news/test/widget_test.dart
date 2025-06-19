@@ -1,84 +1,99 @@
-// Comprehensive widget tests for Sekai News App
-// Tests for UI components, navigation, error handling, and user interactions
+// Uitgebreide widget tests voor Sekai News App
+// Tests voor UI componenten, navigatie, error handling, en gebruikersinteracties
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:sekai_news/main.dart';
 import 'package:sekai_news/screens/main_screens/main_screen.dart';
+import 'test_helper_nl.dart';
 
 void main() {
   group('Sekai News App Widget Tests', () {
-    testWidgets('app should launch and show main navigation', (WidgetTester tester) async {
-      // Build our app and trigger a frame
-      await tester.pumpWidget(const MyApp());
+    testWidgets('app moet opstarten en hoofdnavigatie tonen', (WidgetTester tester) async {
+      // Bouw onze app en trigger een frame
+      await tester.pumpWidgetNL(const MyApp(), 'MyApp wordt geladen');
 
-      // Verify that MainNavScreen is displayed
-      expect(find.byType(MainNavScreen), findsOneWidget);
+      // Verifieer dat MainNavScreen wordt weergegeven
+      TestHelperNL.verwachtWidgetGevonden(find.byType(MainNavScreen), 'MainNavScreen moet gevonden worden');
       
-      // Verify MaterialApp is configured correctly
+      // Verifieer dat MaterialApp correct is geconfigureerd
       final MaterialApp app = tester.widget(find.byType(MaterialApp));
-      expect(app.debugShowCheckedModeBanner, false);
+      TestHelperNL.verwachtFalse(app.debugShowCheckedModeBanner, 'Debug banner moet uitgeschakeld zijn');
+      
+      TestHelperNL.printTestSucces('App opstarten test geslaagd');
     });
 
-    testWidgets('app should have proper theme configuration', (WidgetTester tester) async {
-      await tester.pumpWidget(const MyApp());
+    testWidgets('app moet juiste theme configuratie hebben', (WidgetTester tester) async {
+      await tester.pumpWidgetNL(const MyApp(), 'App met theme wordt geladen');
 
       final MaterialApp app = tester.widget(find.byType(MaterialApp));
       
-      // Verify theme properties
-      expect(app.theme?.splashFactory, NoSplash.splashFactory);
-      expect(app.theme?.highlightColor, Colors.transparent);
-      expect(app.theme?.splashColor, Colors.transparent);
-    });
-
-    testWidgets('app should display without errors', (WidgetTester tester) async {
-      // Build the app
-      await tester.pumpWidget(const MyApp());
-      await tester.pumpAndSettle();
-
-      // Verify no exceptions are thrown
-      expect(tester.takeException(), isNull);
+      // Verifieer theme eigenschappen
+      TestHelperNL.verwachtGelijk(app.theme?.splashFactory, NoSplash.splashFactory, 'Splash factory moet NoSplash zijn');
+      TestHelperNL.verwachtGelijk(app.theme?.highlightColor, Colors.transparent, 'Highlight color moet transparant zijn');
+      TestHelperNL.verwachtGelijk(app.theme?.splashColor, Colors.transparent, 'Splash color moet transparant zijn');
       
-      // Verify basic structure
-      expect(find.byType(Scaffold), findsAtLeastNWidgets(1));
+      TestHelperNL.printTestSucces('Theme configuratie test geslaagd');
     });
 
-    testWidgets('app should handle navigation structure', (WidgetTester tester) async {
-      await tester.pumpWidget(const MyApp());
-      await tester.pumpAndSettle();
+    testWidgets('app moet tonen zonder fouten', (WidgetTester tester) async {
+      // Bouw de app
+      await tester.pumpWidgetNL(const MyApp(), 'App wordt gebouwd');
+      await tester.pumpAndSettleNL(null, 'UI wordt gestabiliseerd');
 
-      // Verify bottom navigation exists
-      expect(find.byType(BottomNavigationBar), findsOneWidget);
+      // Verifieer dat er geen exceptions worden gegooid
+      TestHelperNL.verwachtNull(tester.takeException(), 'Er mogen geen exceptions zijn');
+      
+      // Verifieer basis structuur
+      TestHelperNL.verwachtWidgetGevonden(find.byType(Scaffold), 'Scaffold moet aanwezig zijn');
+      
+      TestHelperNL.printTestSucces('Error-vrije rendering test geslaagd');
     });
 
-    testWidgets('app should be responsive to different screen sizes', (WidgetTester tester) async {
-      // Test with phone size
+    testWidgets('app moet navigatie structuur afhandelen', (WidgetTester tester) async {
+      await tester.pumpWidgetNL(const MyApp(), 'App met navigatie wordt geladen');
+      await tester.pumpAndSettleNL();
+
+      // Verifieer dat bottom navigation bestaat
+      TestHelperNL.verwachtWidgetGevonden(find.byType(BottomNavigationBar), 'Bottom navigation moet aanwezig zijn');
+      
+      TestHelperNL.printTestSucces('Navigatie structuur test geslaagd');
+    });
+
+    testWidgets('app moet responsief zijn voor verschillende schermgroottes', (WidgetTester tester) async {
+      // Test met telefoon grootte
+      TestHelperNL.printTestInfo('Test met telefoon grootte (400x800)');
       await tester.binding.setSurfaceSize(Size(400, 800));
-      await tester.pumpWidget(const MyApp());
-      await tester.pumpAndSettle();
+      await tester.pumpWidgetNL(const MyApp(), 'App op telefoon grootte');
+      await tester.pumpAndSettleNL();
       
-      expect(find.byType(MainNavScreen), findsOneWidget);
+      TestHelperNL.verwachtWidgetGevonden(find.byType(MainNavScreen), 'MainNavScreen moet werken op telefoon grootte');
 
-      // Test with tablet size
+      // Test met tablet grootte
+      TestHelperNL.printTestInfo('Test met tablet grootte (800x1200)');
       await tester.binding.setSurfaceSize(Size(800, 1200));
-      await tester.pumpAndSettle();
+      await tester.pumpAndSettleNL();
       
-      expect(find.byType(MainNavScreen), findsOneWidget);
+      TestHelperNL.verwachtWidgetGevonden(find.byType(MainNavScreen), 'MainNavScreen moet werken op tablet grootte');
 
-      // Reset to default
+      // Reset naar standaard
       await tester.binding.setSurfaceSize(Size(800, 600));
+      
+      TestHelperNL.printTestSucces('Responsief design test geslaagd');
     });
 
-    testWidgets('app should maintain widget integrity', (WidgetTester tester) async {
-      await tester.pumpWidget(const MyApp());
-      await tester.pumpAndSettle();
+    testWidgets('app moet widget integriteit behouden', (WidgetTester tester) async {
+      await tester.pumpWidgetNL(const MyApp(), 'App integriteit test');
+      await tester.pumpAndSettleNL();
 
-      // Test that widgets render without overflow
-      expect(tester.takeException(), isNull);
+      // Test dat widgets renderen zonder overflow
+      TestHelperNL.verwachtNull(tester.takeException(), 'Widgets moeten renderen zonder fouten');
       
-      // Verify core navigation structure
-      expect(find.byType(MaterialApp), findsOneWidget);
-      expect(find.byType(MainNavScreen), findsOneWidget);
+      // Verifieer kern navigatie structuur
+      TestHelperNL.verwachtWidgetGevonden(find.byType(MaterialApp), 'MaterialApp moet aanwezig zijn');
+      TestHelperNL.verwachtWidgetGevonden(find.byType(MainNavScreen), 'MainNavScreen moet aanwezig zijn');
+      
+      TestHelperNL.printTestSucces('Widget integriteit test geslaagd');
     });
   });
 }

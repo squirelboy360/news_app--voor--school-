@@ -3,25 +3,25 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:sekai_news/main.dart';
 
 void main() {
-  group('Simple Integration Tests (No Deprecated Dependencies)', () {
+  group('Eenvoudige Integratie Testen (Geen Verouderde Afhankelijkheden)', () {
     
-    testWidgets('End-to-End: App launch and basic functionality', (WidgetTester tester) async {
-      // Test complete app startup
+    testWidgets('End-to-End: App opstarten en basis functionaliteit', (WidgetTester tester) async {
+      // Test complete app opstarten
       await tester.pumpWidget(const MyApp());
       await tester.pumpAndSettle();
       
-      // Verify app structure
+      // Verifieer app structuur
       expect(find.byType(MaterialApp), findsOneWidget);
       expect(find.byType(Scaffold), findsAtLeastNWidgets(1));
       
-      print('✅ Integration Test 1: App launches successfully');
+      print('✅ Integratie Test 1: App start succesvol op');
     });
     
-    testWidgets('End-to-End: User interaction flow', (WidgetTester tester) async {
+    testWidgets('End-to-End: Gebruiker interactie flow', (WidgetTester tester) async {
       await tester.pumpWidget(const MyApp());
       await tester.pumpAndSettle(Duration(seconds: 3));
       
-      // Try to interact with navigation if present
+      // Probeer te interacteren met navigatie als aanwezig
       final bottomNav = find.byType(BottomNavigationBar);
       if (tester.any(bottomNav)) {
         final navItems = find.descendant(
@@ -34,26 +34,26 @@ void main() {
         }
       }
       
-      // Test scrolling if content exists
+      // Test scrollen als content bestaat
       final scrollView = find.byType(CustomScrollView);
       if (tester.any(scrollView)) {
         await tester.drag(scrollView.first, Offset(0, -100));
         await tester.pumpAndSettle();
       }
       
-      print('✅ Integration Test 2: User interactions work');
+      print('✅ Integratie Test 2: Gebruiker interacties werken');
     });
     
-    testWidgets('End-to-End: Error resilience', (WidgetTester tester) async {
+    testWidgets('End-to-End: Fout tolerantie', (WidgetTester tester) async {
       await tester.pumpWidget(const MyApp());
       
-      // Wait for potential network operations
+      // Wacht op potentiele netwerk operaties
       await tester.pumpAndSettle(Duration(seconds: 5));
       
-      // App should not crash regardless of network state
+      // App mag niet crashen ongeacht netwerk status
       expect(tester.takeException(), isNull);
       
-      print('✅ Integration Test 3: App is resilient to errors');
+      print('✅ Integratie Test 3: App is bestand tegen fouten');
     });
   });
 }

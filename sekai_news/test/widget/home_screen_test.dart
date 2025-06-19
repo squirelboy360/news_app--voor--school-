@@ -5,7 +5,7 @@ import 'package:sekai_news/screens/main_screens/home.dart';
 
 void main() {
   group('HomeScreen Widget Tests', () {
-    testWidgets('should show loading indicator initially', (WidgetTester tester) async {
+    testWidgets('moet loading indicator initieel tonen', (WidgetTester tester) async {
       // Build our app and trigger a frame
       await tester.pumpWidget(MaterialApp(home: HomeScreen()));
 
@@ -13,7 +13,7 @@ void main() {
       expect(find.byType(CupertinoActivityIndicator), findsOneWidget);
     });
 
-    testWidgets('should show app bar with title', (WidgetTester tester) async {
+    testWidgets('moet app bar met titel tonen', (WidgetTester tester) async {
       await tester.pumpWidget(MaterialApp(home: HomeScreen()));
       
       // Verify app bar and title
@@ -21,7 +21,7 @@ void main() {
       expect(find.text('General News'), findsOneWidget);
     });
 
-    testWidgets('should have nested scroll view structure', (WidgetTester tester) async {
+    testWidgets('moet geneste scroll view structuur hebben', (WidgetTester tester) async {
       await tester.pumpWidget(MaterialApp(home: HomeScreen()));
       
       // Verify the basic structure exists
@@ -29,7 +29,7 @@ void main() {
       expect(find.byType(NestedScrollView), findsOneWidget);
     });
 
-    testWidgets('should show error state after failed network request', (WidgetTester tester) async {
+    testWidgets('moet error state tonen na mislukte network request', (WidgetTester tester) async {
       await tester.pumpWidget(MaterialApp(home: HomeScreen()));
       
       // Wait for the network request to complete and potential error state
@@ -40,7 +40,7 @@ void main() {
       expect(find.byType(Scaffold), findsOneWidget);
     });
 
-    testWidgets('should maintain widget structure', (WidgetTester tester) async {
+    testWidgets('moet widget structuur behouden', (WidgetTester tester) async {
       await tester.pumpWidget(MaterialApp(home: HomeScreen()));
       await tester.pump();
 

@@ -3,7 +3,7 @@ import 'package:sekai_news/model/news.dart';
 
 void main() {
   group('NewsArticle Model Tests', () {
-    test('should create NewsArticle from valid JSON', () {
+    test('moet NewsArticle aanmaken van geldige JSON', () {
       // Arrange
       final json = {
         'author': 'John Doe',
@@ -28,7 +28,7 @@ void main() {
       expect(article.source, isA<Map<String, dynamic>>());
     });
 
-    test('should handle null author gracefully', () {
+    test('moet null author graceful afhandelen', () {
       // Arrange
       final json = {
         'author': null,
@@ -43,7 +43,7 @@ void main() {
       expect(article.author, equals('Unknown'));
     });
 
-    test('should handle empty JSON', () {
+    test('moet lege JSON afhandelen', () {
       // Arrange
       final json = <String, dynamic>{};
 
@@ -59,7 +59,7 @@ void main() {
       expect(article.source, isNull);
     });
 
-    test('should handle missing fields', () {
+    test('moet ontbrekende velden afhandelen', () {
       // Arrange
       final json = {
         'title': 'Only Title Available'

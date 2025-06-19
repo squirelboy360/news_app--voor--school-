@@ -7,8 +7,8 @@ import 'package:sekai_news/screens/main_screens/main_screen.dart';
 void main() {
   group('Sekai News App - End-to-End Widget Tests', () {
     
-    testWidgets('Complete app flow test - Launch to News List', (WidgetTester tester) async {
-      print('🚀 Starting complete app flow test...');
+    testWidgets('Volledige app flow test - Lancering naar Nieuwslijst', (WidgetTester tester) async {
+      print('🚀 Volledige app flow test starten...');
       
       // Build the entire app
       await tester.pumpWidget(const MyApp());
@@ -16,42 +16,42 @@ void main() {
       // Wait for initial render
       await tester.pumpAndSettle();
       
-      // Verify app launched successfully
+      // Verifieer dat app succesvol is gelanceerd
       expect(find.byType(MaterialApp), findsOneWidget);
       expect(find.byType(MainNavScreen), findsOneWidget);
-      print('✅ App launched successfully');
+      print('✅ App succesvol gelanceerd');
       
-      // Verify navigation structure exists
+      // Verifieer dat navigatiestructuur bestaat
       expect(find.byType(Scaffold), findsAtLeastNWidgets(1));
-      print('✅ Main navigation structure loaded');
+      print('✅ Hoofdnavigatie structuur geladen');
       
-      // Look for bottom navigation if it exists
+      // Zoek naar bottom navigation indien aanwezig
       final bottomNav = find.byType(BottomNavigationBar);
       if (tester.any(bottomNav)) {
-        print('✅ Bottom navigation found');
+        print('✅ Bottom navigation gevonden');
       }
       
-      // Wait longer for potential network requests (simulate real usage)
+      // Wacht langer voor potentiële netwerk verzoeken (simuleer echt gebruik)
       await tester.pumpAndSettle(Duration(seconds: 5));
       
-      // Check for loading indicators or content
+      // Controleer op loading indicators of content
       final loadingIndicator = find.byType(CupertinoActivityIndicator);
       final scrollView = find.byType(CustomScrollView);
       final nestedScrollView = find.byType(NestedScrollView);
       
       if (tester.any(loadingIndicator)) {
-        print('📋 Loading indicator shown (good UX)');
+        print('📋 Loading indicator getoond (goede UX)');
       }
       
       if (tester.any(scrollView) || tester.any(nestedScrollView)) {
-        print('✅ Scrollable content area found');
+        print('✅ Scrollbare content gebied gevonden');
       }
       
-      print('🎉 Complete app flow test passed!');
+      print('🎉 Volledige app flow test geslaagd!');
     });
     
-    testWidgets('App responsiveness test - Multiple interactions', (WidgetTester tester) async {
-      print('📱 Starting responsiveness test...');
+    testWidgets('App responsiviteit test - Meerdere interacties', (WidgetTester tester) async {
+      print('📱 Responsiviteit test starten...');
       
       await tester.pumpWidget(const MyApp());
       await tester.pumpAndSettle();
@@ -64,29 +64,29 @@ void main() {
         
         await tester.drag(scrollable, Offset(0, 100));
         await tester.pumpAndSettle();
-        print('✅ Scroll interactions work');
+        print('✅ Scroll interacties werken');
       }
       
-      // Test device rotation simulation
+      // Test device rotatie simulatie
       await tester.binding.setSurfaceSize(Size(800, 600)); // Landscape
       await tester.pumpAndSettle();
       
       await tester.binding.setSurfaceSize(Size(400, 800)); // Portrait
       await tester.pumpAndSettle();
-      print('✅ Rotation handling works');
+      print('✅ Rotatie afhandeling werkt');
       
-      print('🎉 Responsiveness test passed!');
+      print('🎉 Responsiviteit test geslaagd!');
     });
     
-    testWidgets('Error handling integration test', (WidgetTester tester) async {
-      print('🚫 Starting error handling test...');
+    testWidgets('Error afhandeling integratie test', (WidgetTester tester) async {
+      print('🚫 Error afhandeling test starten...');
       
       await tester.pumpWidget(const MyApp());
       
-      // Wait for network requests to potentially fail
+      // Wacht tot netwerk verzoeken mogelijk falen
       await tester.pumpAndSettle(Duration(seconds: 8));
       
-      // Check if error handling UI is shown (icon, text, etc.)
+      // Controleer of error afhandeling UI wordt getoond (icoon, tekst, etc.)
       final errorIcon = find.byIcon(Icons.error);
       final refreshIcon = find.byIcon(Icons.refresh);
       final retryText = find.textContaining('proberen');
@@ -94,16 +94,16 @@ void main() {
       
       if (tester.any(errorIcon) || tester.any(refreshIcon) || 
           tester.any(retryText) || tester.any(errorText)) {
-        print('✅ Error handling UI found (good error UX)');
+        print('✅ Error afhandeling UI gevonden (goede error UX)');
       } else {
-        print('✅ No errors occurred (good network/app stability)');
+        print('✅ Geen errors opgetreden (goede netwerk/app stabiliteit)');
       }
       
-      print('🎉 Error handling test completed!');
+      print('🎉 Error afhandeling test voltooid!');
     });
     
-    testWidgets('Performance test - App startup speed', (WidgetTester tester) async {
-      print('⚡ Starting performance test...');
+    testWidgets('Performance test - App opstartsnelheid', (WidgetTester tester) async {
+      print('⚡ Performance test starten...');
       
       final stopwatch = Stopwatch()..start();
       
@@ -113,20 +113,20 @@ void main() {
       stopwatch.stop();
       final startupTime = stopwatch.elapsedMilliseconds;
       
-      print('📊 App startup time: ${startupTime}ms');
+      print('📊 App opstartttijd: ${startupTime}ms');
       
-      // Verify reasonable startup time (under 3 seconds)
+      // Verifieer redelijke opstarttijd (onder 3 seconden)
       expect(startupTime, lessThan(3000));
       
       if (startupTime < 1000) {
-        print('🚀 Excellent startup performance!');
+        print('🚀 Uitstekende opstartprestaties!');
       } else if (startupTime < 2000) {
-        print('✅ Good startup performance');
+        print('✅ Goede opstartprestaties');
       } else {
-        print('⚠️ Acceptable startup performance');
+        print('⚠️ Acceptabele opstartprestaties');
       }
       
-      print('🎉 Performance test passed!');
+      print('🎉 Performance test geslaagd!');
     });
   });
 }

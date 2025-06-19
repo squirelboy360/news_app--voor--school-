@@ -4,86 +4,86 @@ import 'package:sekai_news/main.dart';
 import 'package:sekai_news/screens/main_screens/main_screen.dart';
 
 void main() {
-  group('Integration Tests', () {
-    testWidgets('app should launch successfully', (WidgetTester tester) async {
-      // Build our app and trigger a frame
+  group('Integratie Testen', () {
+    testWidgets('app moet succesvol opstarten', (WidgetTester tester) async {
+      // Bouw onze app en trigger een frame
       await tester.pumpWidget(const MyApp());
 
-      // Verify app launches with main navigation screen
+      // Verifieer dat app opstart met hoofd navigatie scherm
       expect(find.byType(MainNavScreen), findsOneWidget);
     });
 
-    testWidgets('app should handle navigation between tabs', (WidgetTester tester) async {
-      // Build app
+    testWidgets('app moet navigatie tussen tabs afhandelen', (WidgetTester tester) async {
+      // Bouw app
       await tester.pumpWidget(const MyApp());
       await tester.pumpAndSettle();
 
-      // Find bottom navigation
+      // Vind bottom navigatie
       expect(find.byType(BottomNavigationBar), findsOneWidget);
 
-      // Test navigation to different tabs (if they exist)
+      // Test navigatie naar verschillende tabs (als ze bestaan)
       final navItems = find.byType(BottomNavigationBarItem);
       if (navItems.evaluate().isNotEmpty) {
-        // Tap on second tab if it exists
+        // Tik op tweede tab als deze bestaat
         await tester.tap(navItems.at(1));
         await tester.pumpAndSettle();
         
-        // Verify navigation occurred
+        // Verifieer dat navigatie plaatsvond
         expect(find.byType(MainNavScreen), findsOneWidget);
       }
     });
 
-    testWidgets('app should maintain state across navigation', (WidgetTester tester) async {
+    testWidgets('app moet status behouden tijdens navigatie', (WidgetTester tester) async {
       await tester.pumpWidget(const MyApp());
       await tester.pumpAndSettle();
 
-      // Test that the app maintains its structure
+      // Test dat de app zijn structuur behoudt
       expect(find.byType(MaterialApp), findsOneWidget);
       expect(find.byType(MainNavScreen), findsOneWidget);
     });
 
-    testWidgets('app should handle device rotation', (WidgetTester tester) async {
+    testWidgets('app moet apparaat rotatie afhandelen', (WidgetTester tester) async {
       await tester.pumpWidget(const MyApp());
       await tester.pumpAndSettle();
 
-      // Change orientation
+      // Wijzig orientatie
       await tester.binding.setSurfaceSize(Size(800, 600));
       await tester.pumpAndSettle();
 
-      // Verify app still works
+      // Verifieer dat app nog steeds werkt
       expect(find.byType(MainNavScreen), findsOneWidget);
 
-      // Restore original orientation
+      // Herstel originele orientatie
       await tester.binding.setSurfaceSize(Size(400, 800));
       await tester.pumpAndSettle();
     });
 
-    testWidgets('app theme should be applied correctly', (WidgetTester tester) async {
+    testWidgets('app thema moet correct toegepast worden', (WidgetTester tester) async {
       await tester.pumpWidget(const MyApp());
 
       final MaterialApp app = tester.widget(find.byType(MaterialApp));
       
-      // Verify theme properties
+      // Verifieer thema eigenschappen
       expect(app.debugShowCheckedModeBanner, false);
       expect(app.theme?.splashFactory, NoSplash.splashFactory);
       expect(app.theme?.highlightColor, Colors.transparent);
     });
 
-    testWidgets('app should be responsive to different screen sizes', (WidgetTester tester) async {
-      // Test with phone size
+    testWidgets('app moet responsief zijn op verschillende schermformaten', (WidgetTester tester) async {
+      // Test met telefoon formaat
       await tester.binding.setSurfaceSize(Size(400, 800));
       await tester.pumpWidget(const MyApp());
       await tester.pumpAndSettle();
       
       expect(find.byType(MainNavScreen), findsOneWidget);
 
-      // Test with tablet size
+      // Test met tablet formaat
       await tester.binding.setSurfaceSize(Size(800, 1200));
       await tester.pumpAndSettle();
       
       expect(find.byType(MainNavScreen), findsOneWidget);
 
-      // Reset to default
+      // Reset naar standaard
       await tester.binding.setSurfaceSize(Size(800, 600));
     });
   });

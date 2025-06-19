@@ -12,8 +12,8 @@ void main() {
     await dotenv.load(fileName: ".env");
   });
 
-  group('Network and API Tests', () {
-    test('should handle successful API response', () async {
+  group('Netwerk en API Tests', () {
+    test('moet succesvolle API response afhandelen', () async {
       // Arrange
       final mockClient = MockClient((request) async {
         final mockResponse = {
@@ -45,7 +45,7 @@ void main() {
       expect(data['articles'].length, equals(1));
     });
 
-    test('should handle 404 error response', () async {
+    test('moet 404 error response afhandelen', () async {
       // Arrange
       final mockClient = MockClient((request) async {
         return http.Response('Not Found', 404);
@@ -59,7 +59,7 @@ void main() {
       expect(response.body, equals('Not Found'));
     });
 
-    test('should handle 500 server error', () async {
+    test('moet 500 server error afhandelen', () async {
       // Arrange
       final mockClient = MockClient((request) async {
         return http.Response('Internal Server Error', 500);
@@ -73,7 +73,7 @@ void main() {
       expect(response.body, equals('Internal Server Error'));
     });
 
-    test('should handle network timeout', () async {
+    test('moet network timeout afhandelen', () async {
       // Arrange
       final mockClient = MockClient((request) async {
         await Future.delayed(Duration(seconds: 2));
@@ -87,7 +87,7 @@ void main() {
       );
     });
 
-    test('should handle malformed JSON response', () async {
+    test('moet malformed JSON response afhandelen', () async {
       // Arrange
       final mockClient = MockClient((request) async {
         return http.Response('{"invalid": json}', 200);
@@ -104,10 +104,10 @@ void main() {
       );
     });
 
-    test('should handle no internet connection', () async {
+    test('moet geen internetverbinding afhandelen', () async {
       // Arrange
       final mockClient = MockClient((request) async {
-        throw SocketException('No Internet connection');
+        throw const SocketException('No Internet connection');
       });
 
       // Act & Assert
@@ -117,7 +117,7 @@ void main() {
       );
     });
 
-    test('should handle empty articles array', () async {
+    test('moet lege artikelen array afhandelen', () async {
       // Arrange
       final mockClient = MockClient((request) async {
         final mockResponse = {
@@ -137,7 +137,7 @@ void main() {
       expect(data['articles'], isEmpty);
     });
 
-    test('should validate all endpoint URLs', () {
+    test('moet alle endpoint URLs valideren', () {
       // Test that all endpoints are valid URLs
       expect(Uri.tryParse(businessUrl), isNotNull);
       expect(Uri.tryParse(generalUrl), isNotNull);
@@ -146,7 +146,7 @@ void main() {
       expect(Uri.tryParse(cnnUrl), isNotNull);
     });
 
-    test('should handle rate limiting (429 error)', () async {
+    test('moet rate limiting (429 error) afhandelen', () async {
       // Arrange
       final mockClient = MockClient((request) async {
         return http.Response('Rate limit exceeded', 429);
