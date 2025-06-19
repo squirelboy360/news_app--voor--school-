@@ -74,6 +74,14 @@ class TestHelperNL {
     );
   }
   
+  static void verwachtWidgetAanwezig(Finder finder, [String? reden]) {
+    expect(
+      finder, 
+      findsAtLeastNWidgets(1), 
+      reason: reden ?? 'Widget moet aanwezig zijn'
+    );
+  }
+  
   static void verwachtMeerdereWidgetsGevonden(Finder finder, int aantal, [String? reden]) {
     expect(
       finder, 

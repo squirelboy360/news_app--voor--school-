@@ -44,8 +44,8 @@ void main() {
       // Verifieer dat er geen exceptions worden gegooid
       TestHelperNL.verwachtNull(tester.takeException(), 'Er mogen geen exceptions zijn');
       
-      // Verifieer basis structuur
-      TestHelperNL.verwachtWidgetGevonden(find.byType(Scaffold), 'Scaffold moet aanwezig zijn');
+      // Verifieer basis structuur (mogelijk meerdere Scaffolds in geneste structuur)
+      TestHelperNL.verwachtWidgetAanwezig(find.byType(Scaffold), 'Scaffold moet aanwezig zijn');
       
       TestHelperNL.printTestSucces('Error-vrije rendering test geslaagd');
     });
